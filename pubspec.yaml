@@ -114,5 +114,13 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  assets:
+    - assets/
+    - assets/images/
+    - assets/images/1.0x/
+    - assets/images/1.5x/
+    - assets/images/2.0x/
+    - assets/images/3.0x/
+    - assets/images/4.0x/
 flutter_intl:
   enabled: true
