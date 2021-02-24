@@ -23,6 +23,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_portal: ^0.3.0
+  get_it: ^5.0.6
+  flutter_spinkit: ^4.1.2
+  intl: ^0.16.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -33,12 +39,46 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  retrofit_generator: any
+  build_runner: any
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
+  fonts:
+    - family: SourceSansPro
+      fonts:
+        - asset: fonts/SourceSansPro-ExtraLight.ttf
+          weight: 200
+        - asset: fonts/SourceSansPro-ExtraLightItalic.ttf
+          style: italic
+          weight: 200
+        - asset: fonts/SourceSansPro-Light.ttf
+          weight: 300
+        - asset: fonts/SourceSansPro-LightItalic.ttf
+          style: italic
+          weight: 300
+        - asset: fonts/SourceSansPro-Regular.ttf
+          weight: 400
+        - asset: fonts/SourceSansPro-Regular.ttf
+          style: italic
+          weight: 400
+        - asset: fonts/SourceSansPro-SemiBold.ttf
+          weight: 600
+        - asset: fonts/SourceSansPro-SemiBoldItalic.ttf
+          style: italic
+          weight: 600
+        - asset: fonts/SourceSansPro-Bold.ttf
+          weight: 700
+        - asset: fonts/SourceSansPro-BoldItalic.ttf
+          style: italic
+          weight: 700
+        - asset: fonts/SourceSansPro-Black.ttf
+          weight: 900
+        - asset: fonts/SourceSansPro-BlackItalic.ttf
+          style: italic
+          weight: 900
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -74,3 +114,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  enabled: true
