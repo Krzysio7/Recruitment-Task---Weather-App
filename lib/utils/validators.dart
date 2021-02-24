@@ -6,7 +6,7 @@ abstract class Validators {
       return S.current.cityNameRequired;
     }
 
-    final cityRegexp = RegExp(r"^[a-zA-Z]");
+    final cityRegexp = RegExp(r"^[a-zA-Z]+$");
 
     if (!cityRegexp.hasMatch(city.trim())) {
       return S.current.enterValidCity;

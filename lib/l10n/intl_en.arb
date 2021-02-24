@@ -4,5 +4,6 @@
   "chooseCity" : "Choose city",
   "cityNameRequired" : "Enter city name",
   "enterValidCity" : "Enter valid city",
-  "lastSelected" : "Last selected"
+  "lastSelected" : "Last selected",
+  "submit" : "Submit"
 }

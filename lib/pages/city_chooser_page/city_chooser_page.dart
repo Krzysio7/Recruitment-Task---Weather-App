@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/app_scaffold.dart';
 import 'package:weather_app/config/text_styles.dart';
 import 'package:weather_app/generated/l10n.dart';
 import 'package:weather_app/utils/validators.dart';
+import 'package:weather_app/widgets/app_button.dart';
 import 'package:weather_app/widgets/outlined_text_from_field.dart';
 
 class CityChooserPage extends StatelessWidget {
@@ -15,6 +17,14 @@ class CityChooserPage extends StatelessWidget {
   }
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  void _goToWeatherPage(BuildContext context) async {
+    if (!_formKey.currentState.validate()) {
+      return;
+    }
+
+    AppScaffold()
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +45,22 @@ class CityChooserPage extends StatelessWidget {
                   textEditingController: cityController,
                 ),
                 const SizedBox(height: 20),
-                Text(
-                  S.current.lastSelected,
-                  style: TextStyles.hintTextStyle,
+                Visibility(
+                  visible: false,
+                  child: Column(
+                    children: [
+                      Text(
+                        S.current.lastSelected,
+                        style: TextStyles.hintTextStyle,
+                      ),
+                      const SizedBox(height: 8),
+                    ],
+                  ),
                 ),
-                const SizedBox(height: 8),
+                AppButton(
+                  text: S.current.submit,
+                  onPressed: () => _goToWeatherPage(context),
+                ),
               ],
             ),
           ),

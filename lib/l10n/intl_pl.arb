@@ -4,5 +4,6 @@
   "chooseCity" : "Wybierz miasto",
   "cityNameRequired" : "Wprowadź nazwę miasta",
   "enterValidCity" : "Wprowadź prawidłowe miasto",
-  "lastSelected" : "Ostatnio wybrane"
+  "lastSelected" : "Ostatnio wybrane",
+  "submit" : "Zatwierdź"
 }
