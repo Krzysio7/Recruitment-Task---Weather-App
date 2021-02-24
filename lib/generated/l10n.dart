@@ -35,7 +35,15 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-
+  /// `Aplikacja Pogodowa`
+  String get appName {
+    return Intl.message(
+      'Aplikacja Pogodowa',
+      name: 'appName',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
