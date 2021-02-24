@@ -21,6 +21,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "appName" : MessageLookupByLibrary.simpleMessage("Aplikacja Pogodowa")
+    "appName" : MessageLookupByLibrary.simpleMessage("Weather App"),
+    "chooseCity" : MessageLookupByLibrary.simpleMessage("Choose city"),
+    "cityNameRequired" : MessageLookupByLibrary.simpleMessage("Enter city name"),
+    "enterValidCity" : MessageLookupByLibrary.simpleMessage("Enter valid city"),
+    "lastSelected" : MessageLookupByLibrary.simpleMessage("Last selected")
   };
 }

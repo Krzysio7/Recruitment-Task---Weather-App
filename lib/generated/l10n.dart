@@ -35,11 +35,51 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Aplikacja Pogodowa`
+  /// `Weather App`
   String get appName {
     return Intl.message(
-      'Aplikacja Pogodowa',
+      'Weather App',
       name: 'appName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose city`
+  String get chooseCity {
+    return Intl.message(
+      'Choose city',
+      name: 'chooseCity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter city name`
+  String get cityNameRequired {
+    return Intl.message(
+      'Enter city name',
+      name: 'cityNameRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter valid city`
+  String get enterValidCity {
+    return Intl.message(
+      'Enter valid city',
+      name: 'enterValidCity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last selected`
+  String get lastSelected {
+    return Intl.message(
+      'Last selected',
+      name: 'lastSelected',
       desc: '',
       args: [],
     );

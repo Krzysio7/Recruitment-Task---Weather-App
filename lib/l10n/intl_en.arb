@@ -1,4 +1,8 @@
 {
   "@@locale": "en",
-  "appName" : "Aplikacja Pogodowa"
+  "appName" : "Weather App",
+  "chooseCity" : "Choose city",
+  "cityNameRequired" : "Enter city name",
+  "enterValidCity" : "Enter valid city",
+  "lastSelected" : "Last selected"
 }
