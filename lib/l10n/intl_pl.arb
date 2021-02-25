@@ -5,5 +5,7 @@
   "cityNameRequired" : "Wprowadź nazwę miasta",
   "enterValidCity" : "Wprowadź prawidłowe miasto",
   "lastSelected" : "Ostatnio wybrane",
-  "submit" : "Zatwierdź"
+  "submit" : "Zatwierdź",
+  "today" : "Dzisiaj",
+  "tomorrow" : "Jutro"
 }

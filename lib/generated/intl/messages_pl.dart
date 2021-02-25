@@ -26,6 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "cityNameRequired" : MessageLookupByLibrary.simpleMessage("Wprowadź nazwę miasta"),
     "enterValidCity" : MessageLookupByLibrary.simpleMessage("Wprowadź prawidłowe miasto"),
     "lastSelected" : MessageLookupByLibrary.simpleMessage("Ostatnio wybrane"),
-    "submit" : MessageLookupByLibrary.simpleMessage("Zatwierdź")
+    "submit" : MessageLookupByLibrary.simpleMessage("Zatwierdź"),
+    "today" : MessageLookupByLibrary.simpleMessage("Dzisiaj"),
+    "tomorrow" : MessageLookupByLibrary.simpleMessage("Jutro")
   };
 }

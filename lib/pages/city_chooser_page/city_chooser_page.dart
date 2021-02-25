@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/app_scaffold.dart';
+import 'file:///J:/weather_app/lib/pages/home/home_page.dart';
 import 'package:weather_app/config/text_styles.dart';
 import 'package:weather_app/generated/l10n.dart';
 import 'package:weather_app/utils/validators.dart';
@@ -17,18 +17,18 @@ class CityChooserPage extends StatelessWidget {
   }
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _cityController = TextEditingController();
 
   void _goToWeatherPage(BuildContext context) async {
     if (!_formKey.currentState.validate()) {
       return;
     }
 
-    AppScaffold()
+    HomePage.resetTo(context, _cityController.text);
   }
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController cityController = TextEditingController();
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -42,7 +42,7 @@ class CityChooserPage extends StatelessWidget {
                 OutlinedTextFormField(
                   label: S.current.chooseCity,
                   validator: Validators.cityValidator,
-                  textEditingController: cityController,
+                  textEditingController: _cityController,
                 ),
                 const SizedBox(height: 20),
                 Visibility(
