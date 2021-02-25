@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'file:///J:/weather_app/lib/pages/home/home_page.dart';
 import 'package:weather_app/config/text_styles.dart';
 import 'package:weather_app/generated/l10n.dart';
+import 'package:weather_app/pages/home/home_page.dart';
 import 'package:weather_app/utils/validators.dart';
 import 'package:weather_app/widgets/app_button.dart';
 import 'package:weather_app/widgets/outlined_text_from_field.dart';

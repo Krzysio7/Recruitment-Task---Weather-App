@@ -10,5 +10,22 @@
   "tomorrow" : "Tomorrow",
   "details" : "Details",
   "humidity" : "Wilgotność",
-  "moreDetails" : "More Details"
+  "moreDetails" : "More Details",
+  "requestCancelled": "Request cancelled",
+  "connectionRequestTimeout": "Connection request timeout",
+  "noInternetConnection": "No internet connection",
+  "sendTimeout": "Send timeout in connection with API server",
+  "unauthorizedRequest": "Unauthorised request",
+  "notFound": "Not found",
+  "conflictException": "Error due to a conflict",
+  "internalServerError": "Internal server error",
+  "serviceUnavailable": "Service unavailable",
+  "invalidStatusCode": "Invalid status code",
+  "unexpectedError": "Unexpected error occurred",
+  "unableToProcessError": "Unable to process the data",
+  "errorFetchingData": "Error, try to refresh",
+  "pressure": "Pressure",
+  "windSpeed": "Wind speed",
+  "visibility": "Visibility",
+  "refresh": "Refresh"
 }

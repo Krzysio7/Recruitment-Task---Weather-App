@@ -33,4 +33,9 @@ abstract class TextStyles {
     height: 20 / 16,
     color: AppColors.white,
   );
+
+  static const snackBarMessage = TextStyle(
+    fontSize: 15,
+    color: AppColors.white,
+  );
 }

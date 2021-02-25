@@ -144,6 +144,176 @@ class S {
       args: [],
     );
   }
+
+  /// `Request cancelled`
+  String get requestCancelled {
+    return Intl.message(
+      'Request cancelled',
+      name: 'requestCancelled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connection request timeout`
+  String get connectionRequestTimeout {
+    return Intl.message(
+      'Connection request timeout',
+      name: 'connectionRequestTimeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No internet connection`
+  String get noInternetConnection {
+    return Intl.message(
+      'No internet connection',
+      name: 'noInternetConnection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send timeout in connection with API server`
+  String get sendTimeout {
+    return Intl.message(
+      'Send timeout in connection with API server',
+      name: 'sendTimeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unauthorised request`
+  String get unauthorizedRequest {
+    return Intl.message(
+      'Unauthorised request',
+      name: 'unauthorizedRequest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not found`
+  String get notFound {
+    return Intl.message(
+      'Not found',
+      name: 'notFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error due to a conflict`
+  String get conflictException {
+    return Intl.message(
+      'Error due to a conflict',
+      name: 'conflictException',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Internal server error`
+  String get internalServerError {
+    return Intl.message(
+      'Internal server error',
+      name: 'internalServerError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Service unavailable`
+  String get serviceUnavailable {
+    return Intl.message(
+      'Service unavailable',
+      name: 'serviceUnavailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid status code`
+  String get invalidStatusCode {
+    return Intl.message(
+      'Invalid status code',
+      name: 'invalidStatusCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unexpected error occurred`
+  String get unexpectedError {
+    return Intl.message(
+      'Unexpected error occurred',
+      name: 'unexpectedError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unable to process the data`
+  String get unableToProcessError {
+    return Intl.message(
+      'Unable to process the data',
+      name: 'unableToProcessError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error, try to refresh`
+  String get errorFetchingData {
+    return Intl.message(
+      'Error, try to refresh',
+      name: 'errorFetchingData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pressure`
+  String get pressure {
+    return Intl.message(
+      'Pressure',
+      name: 'pressure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wind speed`
+  String get windSpeed {
+    return Intl.message(
+      'Wind speed',
+      name: 'windSpeed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Visibility`
+  String get visibility {
+    return Intl.message(
+      'Visibility',
+      name: 'visibility',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Refresh`
+  String get refresh {
+    return Intl.message(
+      'Refresh',
+      name: 'refresh',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

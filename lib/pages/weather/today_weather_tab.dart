@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:weather_app/config/app_colors.dart';
-import 'package:weather_app/models/forecast_weather/forecast_weather_response.dart';
+import 'package:weather_app/models/weather/weather_response.dart';
 import 'package:weather_app/pages/weather/weather_body.dart';
 import 'package:weather_app/repositories/api_dio.dart';
 import 'package:weather_app/repositories/api_helper.dart';
 import 'package:weather_app/utils/dependency_injection.dart';
 import 'package:weather_app/widgets/app_snackbar.dart';
 
-class TomorrowWeatherTab extends StatefulWidget {
+class TodayWeatherTab extends StatefulWidget {
   final String passedCity;
 
-  TomorrowWeatherTab({this.passedCity});
+  TodayWeatherTab({this.passedCity});
 
   @override
-  _TomorrowWeatherTabState createState() => _TomorrowWeatherTabState();
+  _TodayWeatherTabState createState() => _TodayWeatherTabState();
 }
 
-class _TomorrowWeatherTabState extends State<TomorrowWeatherTab> {
-  ForecastWeatherResponse _weather;
+class _TodayWeatherTabState extends State<TodayWeatherTab> {
+  WeatherResponse _weather;
   bool _loading = true;
 
   void _setLoadingState() {
@@ -38,7 +38,7 @@ class _TomorrowWeatherTabState extends State<TomorrowWeatherTab> {
     try {
       _setLoadingState();
       final response =
-          await sl.get<ApiDio>().getTomorrowWeather(widget.passedCity);
+          await sl.get<ApiDio>().getTodayWeather(widget.passedCity);
       setState(() {
         _weather = response;
       });
@@ -70,19 +70,13 @@ class _TomorrowWeatherTabState extends State<TomorrowWeatherTab> {
   Widget build(BuildContext context) {
     return !_loading && _weather != null
         ? WeatherBody(
-            cityName: _weather?.city?.name ?? '',
-            temp: _weather?.hourlyWeather[0]?.main?.temp?.floor()?.toString() ??
-                '',
-            weatherDescription:
-                _weather?.hourlyWeather[0]?.weather[0]?.description ?? '',
-            humidity:
-                _weather?.hourlyWeather[0]?.main?.humidity?.toString() ?? '',
-            pressure:
-                _weather?.hourlyWeather[0]?.main?.pressure?.toString() ?? '',
-            windSpeed:
-                _weather?.hourlyWeather[0]?.wind?.speed?.toString() ?? '',
-            visibility:
-                _weather?.hourlyWeather[0]?.visibility?.toString() ?? '',
+            cityName: _weather?.name,
+            temp: _weather?.main?.temp?.floor()?.toString() ?? '',
+            weatherDescription: _weather?.weather[0]?.description ?? '',
+            humidity: _weather?.main?.humidity?.toString() ?? '',
+            pressure: _weather?.main?.pressure?.toString() ?? '',
+            windSpeed: _weather?.wind?.speed?.toString() ?? '',
+            visibility: _weather?.visibility?.toString() ?? '',
           )
         : const SpinKitWave(color: AppColors.blue, size: 50);
   }

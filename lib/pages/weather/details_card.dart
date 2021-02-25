@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/config/text_styles.dart';
-import 'package:weather_app/generated/l10n.dart';
 
 class DetailsCard extends StatelessWidget {
   final Color topBorderColor;
+  final String title;
+  final String value;
 
-  DetailsCard({this.topBorderColor});
+  DetailsCard({
+    this.topBorderColor,
+    this.title,
+    this.value,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +32,11 @@ class DetailsCard extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Text(
-            S.current.humidity,
+            title,
           ),
           const SizedBox(height: 10),
           Text(
-            '22%',
+            value,
             style: TextStyles.description,
           ),
           const SizedBox(height: 10),

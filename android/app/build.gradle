@@ -52,6 +52,14 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    externalNativeBuild {
+        cmake {
+            version "3.10.2"
+            path "CMakeLists.txt"
+        }
+    }
+
 }
 
 flutter {
