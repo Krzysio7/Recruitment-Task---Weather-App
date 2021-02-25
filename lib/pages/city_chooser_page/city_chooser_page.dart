@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/config/text_styles.dart';
+import 'package:weather_app/database/cities_table.dart';
+import 'package:weather_app/database/models/city.dart';
 import 'package:weather_app/generated/l10n.dart';
 import 'package:weather_app/pages/home/home_page.dart';
 import 'package:weather_app/utils/validators.dart';
@@ -23,6 +25,7 @@ class CityChooserPage extends StatelessWidget {
     if (!_formKey.currentState.validate()) {
       return;
     }
+    CitiesTable.insertAll([City(name: _cityController.text)]);
 
     HomePage.resetTo(context, _cityController.text);
   }
@@ -46,7 +49,7 @@ class CityChooserPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 Visibility(
-                  visible: false,
+                  visible: true,
                   child: Column(
                     children: [
                       Text(
