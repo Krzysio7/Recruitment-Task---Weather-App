@@ -29,9 +29,6 @@ class AppButton extends StatelessWidget {
       child: FlatButton(
         disabledColor: AppColors.greyish,
         disabledTextColor: AppColors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-        ),
         child: Row(
           mainAxisAlignment: mainAxisAlignment,
           children: [

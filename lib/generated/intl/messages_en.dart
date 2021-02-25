@@ -24,8 +24,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "appName" : MessageLookupByLibrary.simpleMessage("Weather App"),
     "chooseCity" : MessageLookupByLibrary.simpleMessage("Choose city"),
     "cityNameRequired" : MessageLookupByLibrary.simpleMessage("Enter city name"),
+    "details" : MessageLookupByLibrary.simpleMessage("Details"),
     "enterValidCity" : MessageLookupByLibrary.simpleMessage("Enter valid city"),
+    "humidity" : MessageLookupByLibrary.simpleMessage("Wilgotność"),
     "lastSelected" : MessageLookupByLibrary.simpleMessage("Last selected"),
+    "moreDetails" : MessageLookupByLibrary.simpleMessage("More Details"),
     "submit" : MessageLookupByLibrary.simpleMessage("Submit"),
     "today" : MessageLookupByLibrary.simpleMessage("Today"),
     "tomorrow" : MessageLookupByLibrary.simpleMessage("Tomorrow")

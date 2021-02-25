@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/pages/weather/tomorrow_weather_tab.dart';
 import 'package:weather_app/pages/weather/weather_tab.dart';
 import 'package:weather_app/widgets/top_navigation_bar.dart';
 import 'package:weather_app/widgets/weather_app_app_bar.dart';
@@ -57,7 +58,7 @@ class _HomePageState extends State<HomePage>
                 TodayWeatherTab(
                   passedCity: widget.selectedCity,
                 ),
-                TodayWeatherTab(
+                TomorrowWeatherTab(
                   passedCity: widget.selectedCity,
                 ),
               ],

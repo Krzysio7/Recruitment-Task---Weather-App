@@ -114,6 +114,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Details`
+  String get details {
+    return Intl.message(
+      'Details',
+      name: 'details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wilgotność`
+  String get humidity {
+    return Intl.message(
+      'Wilgotność',
+      name: 'humidity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `More Details`
+  String get moreDetails {
+    return Intl.message(
+      'More Details',
+      name: 'moreDetails',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
