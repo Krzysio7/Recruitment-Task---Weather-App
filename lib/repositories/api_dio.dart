@@ -36,7 +36,7 @@ class ApiDio {
         city,
         options: buildCacheOptions(
           Duration(seconds: 30),
-          forceRefresh: true,
+          forceRefresh: false,
           subKey: 'locale=$city',
         ),
       );
@@ -53,7 +53,7 @@ class ApiDio {
         city,
         options: buildCacheOptions(
           Duration(seconds: 30),
-          forceRefresh: true,
+          forceRefresh: false,
           subKey: 'locale=$city',
         ),
       );

@@ -71,7 +71,7 @@ class _TodayWeatherTabState extends State<TodayWeatherTab> {
     return !_loading && _weather != null
         ? WeatherBody(
             cityName: _weather?.name,
-            temp: _weather?.main?.temp?.floor()?.toString() ?? '',
+            temp: _weather?.main?.temp?.floor(),
             weatherDescription: _weather?.weather[0]?.description ?? '',
             humidity: _weather?.main?.humidity?.toString() ?? '',
             pressure: _weather?.main?.pressure?.toString() ?? '',

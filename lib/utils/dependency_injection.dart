@@ -10,5 +10,5 @@ Future<void> init() async {
   sl.registerLazySingleton(() => BusyNotifier());
   sl.registerLazySingleton(() => NativeStorage());
   sl.registerLazySingleton(() => ApiDio());
-  sl.registerSingleton(WeatherAppDatabase());
+  sl.registerSingletonAsync(() async => WeatherAppDatabase().init());
 }

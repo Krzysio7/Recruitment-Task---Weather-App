@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:weather_app/database/cities_table.dart';
 import 'package:weather_app/database/models/city.dart';
@@ -16,5 +18,16 @@ class CitiesNotifier with ChangeNotifier {
     if (cities != null && cities.length > 0) {
       _citiesList = cities;
     }
+  }
+
+  FutureOr<void> addCityToList(String cityName) async {
+    if (_citiesList.any((element) {
+      return element.name == cityName;
+    })) {
+      return;
+    }
+    _citiesList.add(City(name: cityName));
+    await CitiesTable.insertAll(_citiesList, deleteBefore: true);
+    notifyListeners();
   }
 }

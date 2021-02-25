@@ -5,14 +5,7 @@ import 'package:weather_app/database/cities_table.dart';
 class WeatherAppDatabase {
   Database _database;
 
-  WeatherAppDatabase() {
-    print('init');
-    if (_database == null) {
-      init();
-    }
-  }
-
-  init() async {
+  Future<WeatherAppDatabase> init() async {
     _database = await openDatabase(
         join(await getDatabasesPath(), 'weather_app.db'),
         version: 1, onCreate: (Database database, int version) async {
@@ -27,6 +20,7 @@ class WeatherAppDatabase {
       }
       await batch.commit();
     });
+    return this;
   }
 
   getDatabase() {

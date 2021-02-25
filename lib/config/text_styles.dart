@@ -38,4 +38,9 @@ abstract class TextStyles {
     fontSize: 15,
     color: AppColors.white,
   );
+
+  static const listItemTitle = TextStyle(
+    fontSize: 20,
+    color: AppColors.black,
+  );
 }

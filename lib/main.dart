@@ -13,6 +13,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await di.init();
+  await di.sl.allReady();
+
   runApp(MyApp());
 }
 
