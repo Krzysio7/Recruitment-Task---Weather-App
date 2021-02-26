@@ -4,6 +4,7 @@ import 'package:weather_app/config/text_styles.dart';
 import 'package:weather_app/generated/l10n.dart';
 import 'package:weather_app/pages/weather/details_card.dart';
 import 'package:weather_app/widgets/app_button.dart';
+import 'package:weather_app/widgets/app_snackbar.dart';
 
 class WeatherBody extends StatelessWidget {
   final String cityName;
@@ -57,7 +58,8 @@ class WeatherBody extends StatelessWidget {
               child: AppButton(
                 width: 200,
                 text: S.current.moreDetails,
-                onPressed: () => {},
+                onPressed: () => Scaffold.of(context)
+                    .showSnackBar(AppSnackBar(message: 'TODO')),
               ),
             ),
           ],
