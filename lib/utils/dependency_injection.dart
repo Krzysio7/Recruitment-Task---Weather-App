@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:weather_app/database/weather_app_database.dart';
 import 'package:weather_app/notifiers/busy_notifier.dart';
+import 'package:weather_app/notifiers/cities_notifier.dart';
 import 'package:weather_app/repositories/api_dio.dart';
 import 'package:weather_app/utils/native_storage.dart';
 
@@ -11,4 +12,5 @@ Future<void> init() async {
   sl.registerLazySingleton(() => NativeStorage());
   sl.registerLazySingleton(() => ApiDio());
   sl.registerSingletonAsync(() async => WeatherAppDatabase().init());
+  sl.registerLazySingleton(() => CitiesNotifier());
 }

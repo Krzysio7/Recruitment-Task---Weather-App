@@ -37,7 +37,7 @@ class ApiDio {
         options: buildCacheOptions(
           Duration(seconds: 30),
           forceRefresh: false,
-          subKey: 'locale=$city',
+          subKey: 'city=$city',
         ),
       );
     } catch (error) {
@@ -54,7 +54,7 @@ class ApiDio {
         options: buildCacheOptions(
           Duration(seconds: 30),
           forceRefresh: false,
-          subKey: 'locale=$city',
+          subKey: 'city=$city',
         ),
       );
     } catch (error) {

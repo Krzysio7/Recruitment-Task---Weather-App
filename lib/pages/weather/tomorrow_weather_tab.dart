@@ -3,6 +3,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:weather_app/config/app_colors.dart';
 import 'package:weather_app/models/forecast_weather/forecast_weather_response.dart';
+import 'package:weather_app/notifiers/cities_notifier.dart';
 import 'package:weather_app/pages/weather/weather_body.dart';
 import 'package:weather_app/repositories/api_dio.dart';
 import 'package:weather_app/repositories/api_helper.dart';
@@ -10,10 +11,6 @@ import 'package:weather_app/utils/dependency_injection.dart';
 import 'package:weather_app/widgets/app_snackbar.dart';
 
 class TomorrowWeatherTab extends StatefulWidget {
-  final String passedCity;
-
-  TomorrowWeatherTab({this.passedCity});
-
   @override
   _TomorrowWeatherTabState createState() => _TomorrowWeatherTabState();
 }
@@ -37,11 +34,9 @@ class _TomorrowWeatherTabState extends State<TomorrowWeatherTab> {
   Future<void> _fetchData() async {
     try {
       _setLoadingState();
-      final response =
-          await sl.get<ApiDio>().getTomorrowWeather(widget.passedCity);
-      setState(() {
-        _weather = response;
-      });
+      _weather = await sl
+          .get<ApiDio>()
+          .getTomorrowWeather(sl.get<CitiesNotifier>().currentCityName);
     } catch (error) {
       print(error);
       final _errorMessage = ApiHelper.getErrorMessage(error);
@@ -58,12 +53,17 @@ class _TomorrowWeatherTabState extends State<TomorrowWeatherTab> {
     }
   }
 
+  void _cityChangeListener() {
+    _fetchData();
+  }
+
   @override
   void initState() {
     super.initState();
     SchedulerBinding.instance.addPostFrameCallback((_) {
       _fetchData();
     });
+    sl.get<CitiesNotifier>().addListener(_cityChangeListener);
   }
 
   @override
@@ -84,5 +84,11 @@ class _TomorrowWeatherTabState extends State<TomorrowWeatherTab> {
                 _weather?.hourlyWeather[0]?.visibility?.toString() ?? '',
           )
         : const SpinKitWave(color: AppColors.blue, size: 50);
+  }
+
+  @override
+  void dispose() {
+    sl.get<CitiesNotifier>().removeListener(_cityChangeListener);
+    super.dispose();
   }
 }

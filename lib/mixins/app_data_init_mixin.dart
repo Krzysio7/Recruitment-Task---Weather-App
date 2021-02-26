@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:weather_app/notifiers/cities_notifier.dart';
+import 'package:weather_app/utils/dependency_injection.dart';
 
 mixin AppDataInitMixin {
   Future<void> _initRemindedCitiesList(BuildContext context) async {
     try {
-      await context.read<CitiesNotifier>().initFromDB();
+      await sl.get<CitiesNotifier>().initFromDB();
     } catch (error) {
       print(error);
     }

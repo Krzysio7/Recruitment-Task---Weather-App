@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/config/app_colors.dart';
 
+import 'file:///J:/weather_app/lib/pages/city_chooser_page/choose_city_dialog.dart';
+
 class WeatherAppAppBar extends StatefulWidget with PreferredSizeWidget {
   @override
   _WeatherAppAppBarState createState() => _WeatherAppAppBarState();
@@ -10,12 +12,6 @@ class WeatherAppAppBar extends StatefulWidget with PreferredSizeWidget {
 }
 
 class _WeatherAppAppBarState extends State<WeatherAppAppBar> {
-  final Widget _hamburgerIcon = const Icon(
-    Icons.menu,
-    color: AppColors.blue,
-    size: 32,
-  );
-
   final Widget _searchIcon = const Icon(
     Icons.search,
     color: AppColors.blue,
@@ -36,18 +32,12 @@ class _WeatherAppAppBarState extends State<WeatherAppAppBar> {
                 children: [
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      AppBarButton(
-                        icon: _hamburgerIcon,
-                        onPressed: () {
-                          Scaffold.of(context).openDrawer();
-                        },
-                      ),
                       AppBarButton(
                         icon: _searchIcon,
                         onPressed: () {
-                          Scaffold.of(context).openDrawer();
+                          ChooseCityDialog.show(context);
                         },
                       ),
                     ],

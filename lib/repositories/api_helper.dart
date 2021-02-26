@@ -6,6 +6,7 @@ import 'package:weather_app/generated/l10n.dart';
 
 abstract class ApiHelper {
   static Exception getApiError(error) {
+    print(error);
     if (error is Exception) {
       try {
         AppException appException;
@@ -73,6 +74,7 @@ abstract class ApiHelper {
         }
         return appException;
       } on FormatException catch (e) {
+        print(e);
         // Helper.printError(e.toString());
         return FormatException(S.current.unexpectedError);
       } catch (_) {
@@ -100,7 +102,7 @@ abstract class ApiHelper {
         message,
       );
     }
-
+    print(exp);
     return ErrorMessage(
       S.current.unexpectedError,
     );

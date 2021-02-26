@@ -6,6 +6,15 @@ import 'package:weather_app/database/models/city.dart';
 
 class CitiesNotifier with ChangeNotifier {
   List<City> _citiesList = [];
+  String _currentCityName;
+
+  String get currentCityName => _currentCityName;
+
+  set currentCityName(String value) {
+    print(value);
+    _currentCityName = value;
+    notifyListeners();
+  }
 
   List<City> get citiesList => _citiesList;
 
@@ -28,6 +37,6 @@ class CitiesNotifier with ChangeNotifier {
     }
     _citiesList.add(City(name: cityName));
     await CitiesTable.insertAll(_citiesList, deleteBefore: true);
-    notifyListeners();
+    currentCityName = cityName;
   }
 }

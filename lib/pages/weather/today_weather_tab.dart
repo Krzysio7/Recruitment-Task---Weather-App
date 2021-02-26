@@ -3,6 +3,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:weather_app/config/app_colors.dart';
 import 'package:weather_app/models/weather/weather_response.dart';
+import 'package:weather_app/notifiers/cities_notifier.dart';
 import 'package:weather_app/pages/weather/weather_body.dart';
 import 'package:weather_app/repositories/api_dio.dart';
 import 'package:weather_app/repositories/api_helper.dart';
@@ -10,10 +11,6 @@ import 'package:weather_app/utils/dependency_injection.dart';
 import 'package:weather_app/widgets/app_snackbar.dart';
 
 class TodayWeatherTab extends StatefulWidget {
-  final String passedCity;
-
-  TodayWeatherTab({this.passedCity});
-
   @override
   _TodayWeatherTabState createState() => _TodayWeatherTabState();
 }
@@ -37,11 +34,9 @@ class _TodayWeatherTabState extends State<TodayWeatherTab> {
   Future<void> _fetchData() async {
     try {
       _setLoadingState();
-      final response =
-          await sl.get<ApiDio>().getTodayWeather(widget.passedCity);
-      setState(() {
-        _weather = response;
-      });
+      _weather = await sl
+          .get<ApiDio>()
+          .getTodayWeather(sl.get<CitiesNotifier>().currentCityName);
     } catch (error) {
       print(error);
       final _errorMessage = ApiHelper.getErrorMessage(error);
@@ -58,12 +53,17 @@ class _TodayWeatherTabState extends State<TodayWeatherTab> {
     }
   }
 
+  void _cityChangeListener() {
+    _fetchData();
+  }
+
   @override
   void initState() {
     super.initState();
     SchedulerBinding.instance.addPostFrameCallback((_) {
       _fetchData();
     });
+    sl.get<CitiesNotifier>().addListener(_cityChangeListener);
   }
 
   @override
@@ -79,5 +79,11 @@ class _TodayWeatherTabState extends State<TodayWeatherTab> {
             visibility: _weather?.visibility?.toString() ?? '',
           )
         : const SpinKitWave(color: AppColors.blue, size: 50);
+  }
+
+  @override
+  void dispose() {
+    sl.get<CitiesNotifier>().removeListener(_cityChangeListener);
+    super.dispose();
   }
 }

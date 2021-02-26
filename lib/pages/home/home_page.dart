@@ -1,29 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/pages/weather/tomorrow_weather_tab.dart';
 import 'package:weather_app/pages/weather/today_weather_tab.dart';
+import 'package:weather_app/pages/weather/tomorrow_weather_tab.dart';
 import 'package:weather_app/widgets/top_navigation_bar.dart';
 import 'package:weather_app/widgets/weather_app_app_bar.dart';
 
 class HomePage extends StatefulWidget {
   static resetTo(
     BuildContext context,
-    String selectedCity,
   ) {
     Navigator.of(context).pushAndRemoveUntil(
       MaterialPageRoute(
-        builder: (context) => HomePage(
-          selectedCity: selectedCity,
-        ),
+        builder: (context) => HomePage(),
       ),
       (Route<dynamic> route) => false,
     );
   }
-
-  final String selectedCity;
-
-  HomePage({
-    this.selectedCity,
-  });
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -55,12 +46,8 @@ class _HomePageState extends State<HomePage>
               controller: _tabController,
               // physics: NeverScrollableScrollPhysics(),
               children: [
-                TodayWeatherTab(
-                  passedCity: widget.selectedCity,
-                ),
-                TomorrowWeatherTab(
-                  passedCity: widget.selectedCity,
-                ),
+                TodayWeatherTab(),
+                TomorrowWeatherTab(),
               ],
             ),
           ),
