@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/config/app_colors.dart';
-import 'package:weather_app/pages/city_chooser_page/choose_city_dialog.dart';
+
+import '../pages/city_chooser_page/choose_city_dialog.dart';
 
 class WeatherAppAppBar extends StatefulWidget with PreferredSizeWidget {
   @override
